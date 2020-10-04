@@ -19,8 +19,7 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
-      "camelCase"
+      "app"
     ],
     "component-selector": [
       true,
@@ -114,9 +113,7 @@
     },
     "variable-name": {
       "options": [
-        "ban-keywords",
-        "check-format",
-        "allow-pascal-case"
+        "ban-keywords"
       ]
     },
     "whitespace": {

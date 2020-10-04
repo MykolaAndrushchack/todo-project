@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "styles/normalize";
+@import "styles/variables";
+@import "styles/container";
+@import "styles/form-input";
+@import "styles/buttons";
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+[placeholder] {
+  text-overflow: ellipsis;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  text-overflow: ellipsis;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  text-overflow: ellipsis;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  text-overflow: ellipsis;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-overflow: ellipsis;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

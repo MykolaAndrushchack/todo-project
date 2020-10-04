@@ -1,0 +1,50 @@
+<div class="wrapper" (keydown.escape)="cancel()">
+  <div class="container">
+    <div class="top">
+      <h2 class="text-center">Todos page</h2>
+
+      <div class="create-todo" [formGroup]="form">
+        <div class="form-input">
+          <div class="form-input-label">{{todoChange ? 'Change todo' : 'New todo'}}</div>
+          <input type="text" class="input" placeholder="Name" formControlName="title"
+                 (keydown.enter)="todoChange ? handleEdit() : handleAdd()">
+        </div>
+        <div class="create">
+          <button class="btn" (click)="todoChange ? handleEdit() : handleAdd()"
+                  [disabled]="this.form.invalid">{{todoChange ? 'Change' : 'Add'}}</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="content-todos">
+      <h3 class="text-center">All your todos</h3>
+      <div class="todo" *ngFor="let todo of todos; let i = index;">
+        <div class="content">
+          <div class="wrapper-checkbox">
+            <label for="check-{{i}}" class="dot"
+                   [class.checked]="todo.completed"></label>
+            <input id="check-{{i}}" type="checkbox" class="checkbox" [(ngModel)]="todo.completed">
+          </div>
+          <div class="text" [class.checked]="todo.completed">{{todo.title}}</div>
+        </div>
+
+        <div class="controls">
+          <div class="edit" (click)="handleClickEdit(todo)">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0 13.25V17H3.75L12.81 7.94L9.06 4.19L0 13.25ZM15.71 5.04C16.1 4.65 16.1 4.02 15.71 3.63L13.37 1.29C12.98 0.899998 12.35 0.899998 11.96 1.29L10.13 3.12L13.88 6.87L15.71 5.04Z"
+                fill="#212B36"/>
+            </svg>
+          </div>
+          <div class="delete" (click)="handleDelete(todo.id)">
+            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 14C1 15.1 1.9 16 3 16H11C12.1 16 13 15.1 13 14V4H1V14ZM14 1H10.5L9.5 0H4.5L3.5 1H0V3H14V1Z"
+                    fill="#212B36"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

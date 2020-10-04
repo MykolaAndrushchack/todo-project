@@ -1,0 +1,62 @@
+<div class="wrapper">
+  <div class="container">
+    <h2 class="title">Todos App</h2>
+
+    <div class="form" [formGroup]="form">
+      <div class="form-input">
+        <div class="form-input-label">Name</div>
+        <input type="text" class="input" placeholder="Name" formControlName="name">
+        <div class="form-input-error"
+             *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
+          Invalid value
+        </div>
+      </div>
+      <div class="form-input">
+        <div class="form-input-label">Username</div>
+        <input type="text" class="input" placeholder="Username" formControlName="username">
+        <div class="form-input-error"
+             *ngIf="form.controls['username'].invalid && form.controls['username'].touched">
+          Invalid value
+        </div>
+      </div>
+      <div class="form-input">
+        <div class="form-input-label">Email</div>
+        <input type="email" class="input" placeholder="Email" formControlName="email">
+        <div class="form-input-error"
+             *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+          Invalid value
+        </div>
+      </div>
+      <div class="form-input">
+        <div class="form-input-label">Phone</div>
+        <input type="text" class="input" placeholder="Phone" formControlName="phone" appPhoneMask>
+        <div class="form-input-error"
+             *ngIf="form.controls['phone'].invalid && form.controls['phone'].touched">
+          Invalid value
+        </div>
+      </div>
+      <div formGroupName="address">
+        <div class="form-input">
+          <div class="form-input-label">Street</div>
+          <input type="text" class="input" placeholder="Street" formControlName="street">
+        </div>
+        <div class="form-input">
+          <div class="form-input-label">Suite</div>
+          <input type="text" class="input" placeholder="Suite" formControlName="suite">
+        </div>
+        <div class="form-input">
+          <div class="form-input-label">City</div>
+          <input type="text" class="input" placeholder="City" formControlName="city">
+        </div>
+        <div class="form-input">
+          <div class="form-input-label">Zipcode</div>
+          <input type="number" class="input" placeholder="Zipcode" formControlName="zipcode">
+        </div>
+      </div>
+
+      <div class="create-account">
+        <button class="btn" [disabled]="form.invalid" (click)="handleRegister()">Create account</button>
+      </div>
+    </div>
+  </div>
+</div>

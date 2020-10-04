@@ -1,0 +1,84 @@
+.wrapper {
+  padding: 50px 0;
+
+  .top {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  .todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid silver;
+  }
+
+  .controls {
+    display: flex;
+
+    .edit, .delete {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  }
+
+  .create-todo {
+    display: flex;
+    align-items: flex-end;
+    background-color: #fff;
+    padding: 20px 18px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+
+    .form-input {
+      flex: 6;
+      margin-bottom: 0;
+      margin-right: 40px;
+    }
+
+    .create {
+      flex: 1;
+    }
+  }
+
+  .content-todos {
+    margin-top: 50px;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .wrapper-checkbox {
+    margin-right: 15px;
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  .dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid black;
+    cursor: pointer;
+
+    &.checked {
+      background-color: #23e508;
+      border: 1px solid #23e508;
+    }
+  }
+
+  .text {
+    &.checked {
+      text-decoration: line-through;
+    }
+  }
+}

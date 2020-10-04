@@ -1,0 +1,30 @@
+.form-input {
+  margin-bottom: 15px;
+
+  &-label {
+    color: #222222;
+    margin-bottom: 8px;
+  }
+
+  &-error {
+    color: red;
+    margin-top: 5px;
+  }
+}
+
+.input {
+  border: 1px solid #999090;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: none;
+  border-radius: 6px;
+  color: #222222;
+  width: 100%;
+  padding: 7px 15px;
+
+  &:focus {
+    border-color: #288994;
+    box-shadow: 0px 0px 5px rgb(26, 39, 169, 0.3);
+  }
+}
+
